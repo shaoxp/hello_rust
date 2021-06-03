@@ -15,6 +15,11 @@ fn main() {
     let ip = Point{x:1, y:2};
 
     println!("{}",ip.x);
+
+    let s1= String::from("abcdefg aaaaa");
+    let s2 = "9sdfsfdasf";
+    let s3 = longest_and_prounce(s1.as_str(), s2, "abc");
+    println!("returned: {}",s3);
 }
 
 fn largest<T: std::cmp::PartialOrd+Copy>(v: &[T]) -> &T{
@@ -37,8 +42,21 @@ impl<T> Point<T>{
     fn x(&self) -> &T{
         &self.x
     }
+}
 
-    fn xx<U>(&self) ->U{
-        self.x
+use std::fmt::Display;
+
+fn longest_and_prounce<'a,T>(
+    x: &'a str,
+    y: &'a str,
+    txt: T,
+)-> &'a str
+where T:Display, {
+
+    println!("announce :{}",txt);
+    if x.len()>y.len(){
+        x
+    }else{
+        y
     }
 }
