@@ -3,6 +3,8 @@ name = "art"
 version = "0.1.0"
 authors = ["shaoxp <shaoxp@simplenature.cn>"]
 edition = "2018"
+license = "MIT"
+description = "The demo crate when learning rust programming language!"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
