@@ -1,5 +1,5 @@
 [package]
-name = "xp_pri_test_art"
+name = "xp_test_art"
 version = "0.1.0"
 authors = ["shaoxp <shaoxp@simplenature.cn>"]
 edition = "2018"
