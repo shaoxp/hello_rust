@@ -30,4 +30,8 @@ pub mod utils{
     pub fn mix(c1:PrimaryColor,c2:PrimaryColor) -> SecondaryColor{
         SecondaryColor::Orange
     }
+
+    pub fn hello()->&'static str{
+        "hello"
+    }
 }
