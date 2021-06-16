@@ -38,6 +38,9 @@ pub trait State{
     fn content<'a> (&self,_post: &'a Post)->&'a str{
         ""
     }
+
+    type A;
+    type B;
 }
 
 pub struct Draft {
@@ -52,6 +55,8 @@ pub struct Published {
 }
 
 impl State for Draft{
+    type A = i32;
+    type B = u32;
     fn request_review(self: Box<Self>) -> Box<dyn State>{
         Box::new(PendingReview{})
     }
@@ -61,6 +66,8 @@ impl State for Draft{
 } 
 
 impl State for PendingReview{
+    type A = i32;
+    type B = u32;
 
     fn request_review(self: Box<Self>) -> Box<dyn State>{
         self
@@ -72,6 +79,9 @@ impl State for PendingReview{
 }
 
 impl State for Published{
+    type A = i32;
+    type B = u32;
+    
     fn request_review(self: Box<Self>) -> Box<dyn State>{
         self
     }
